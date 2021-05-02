@@ -1,0 +1,15 @@
+{
+  "short_name": "Izicap",
+  "name": "Izicap",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "180x180 32x32 192x192 270x270",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

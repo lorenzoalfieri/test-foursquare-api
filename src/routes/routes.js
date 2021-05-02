@@ -5,7 +5,6 @@ const routes = [
     pageName: "Dashboard",
     path: "/dashboard",
     Component: Dashboard,
-    isAuthProtected: false,
   },
 ];
 

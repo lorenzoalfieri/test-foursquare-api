@@ -33,6 +33,11 @@ const AppRoute = () => {
     return <div></div>;
   };
 
+  UpdateRoute.propTypes = {
+    path: PropTypes.string,
+    setCurrentRoute: PropTypes.func,
+  };
+
   if (currentRoute === null) {
     return (
       <CircularProgress

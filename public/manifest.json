@@ -3,8 +3,8 @@
   "name": "Izicap",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "180x180 32x32 192x192 270x270",
+      "src": "cropped-favicon-32x32.png",
+      "sizes": "32x32",
       "type": "image/x-icon"
     }
   ],

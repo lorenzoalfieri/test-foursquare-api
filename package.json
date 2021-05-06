@@ -8,7 +8,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "eslint:fix": "eslint src/ --fix",
-    "eslint": "eslint src/"
+    "eslint": "eslint src/",
+    "testcafe": "testcafe chrome __tests-E2E__"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
@@ -26,14 +27,20 @@
     "react-scripts": "4.0.3"
   },
   "devDependencies": {
+    "@testing-library/react": "^11.2.6",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
-    "prettier": "^2.2.1"
+    "eslint-plugin-testcafe": "^0.2.1",
+    "eslint-plugin-testing-library": "^3.10.2",
+    "prettier": "^2.2.1",
+    "testcafe": "^1.14.0"
   },
   "eslintConfig": {
     "env": {
+      "jest/globals": true,
       "browser": true,
       "es6": true,
       "jest": true,
@@ -48,12 +55,19 @@
     },
     "plugins": [
       "prettier",
-      "react"
+      "react-hooks",
+      "react",
+      "testcafe",
+      "jest",
+      "testing-library"
     ],
     "extends": [
       "eslint:recommended",
       "plugin:react/recommended",
-      "prettier"
+      "prettier",
+      "plugin:jest/recommended",
+      "plugin:testcafe/recommended",
+      "plugin:testing-library/react"
     ],
     "rules": {
       "no-console": [

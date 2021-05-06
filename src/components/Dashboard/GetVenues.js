@@ -25,15 +25,15 @@ const GetVenues = ({ setVenues }) => {
   });
 
   const locationSuccess = (position) => {
-    setLatitude(position.coords.latitude);
-    setLongitude(position.coords.longitude);
-    enqueueSnackbar("Successfully retreived your location !", {
+    setLatitude(position.coords.latitude.toString());
+    setLongitude(position.coords.longitude.toString());
+    enqueueSnackbar("Successfully retrieved your location !", {
       variant: "success",
     });
   };
 
   const locationError = () => {
-    enqueueSnackbar("Unable to retreive your location !", { variant: "error" });
+    enqueueSnackbar("Unable to retrieve your location !", { variant: "error" });
   };
 
   const getMyLocation = () => {
@@ -59,13 +59,13 @@ const GetVenues = ({ setVenues }) => {
         },
       })
       .then((res) => {
-        enqueueSnackbar("Venues close to your location retreived.", {
+        enqueueSnackbar("Venues close to your location retrieved.", {
           variant: "success",
         });
         setVenues(res.data.response.venues);
       })
       .catch(() => {
-        enqueueSnackbar("There was an error while earching for venues.", {
+        enqueueSnackbar("There was an error while Searching for venues.", {
           variant: "error",
         });
       });
@@ -97,6 +97,7 @@ const GetVenues = ({ setVenues }) => {
           }}
         >
           <TextField
+            id="latitude"
             required
             value={latitude}
             onChange={(e) => setLatitude(e.target.value)}
@@ -108,6 +109,7 @@ const GetVenues = ({ setVenues }) => {
           />
           <TextField
             required
+            id="longitude"
             value={longitude}
             onChange={(e) => setLongitude(e.target.value)}
             margin="dense"
@@ -117,7 +119,12 @@ const GetVenues = ({ setVenues }) => {
             style={{ width: "48%" }}
           />
         </div>
-        <Button variant="contained" color={"primary"} onClick={getMyLocation}>
+        <Button
+          id="btn-get-location"
+          variant="contained"
+          color={"primary"}
+          onClick={getMyLocation}
+        >
           Get my location
         </Button>
       </div>
@@ -129,6 +136,7 @@ const GetVenues = ({ setVenues }) => {
         }}
       >
         <TextField
+          id="keyword"
           required
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
@@ -138,6 +146,7 @@ const GetVenues = ({ setVenues }) => {
           variant="outlined"
         />
         <Button
+          id="btn-submit"
           disabled={submitDisable}
           variant="contained"
           color={"primary"}
@@ -151,7 +160,7 @@ const GetVenues = ({ setVenues }) => {
   );
 };
 
-GetVenues.PropTypes = {
+GetVenues.propTypes = {
   setVenues: PropTypes.func,
 };
 

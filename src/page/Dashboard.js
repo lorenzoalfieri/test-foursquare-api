@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import axios from "axios";
-
 import GetVenues from "../components/Dashboard/GetVenues";
 import CardVenue from "../components/Dashboard/CardVenue";
 import Link from "@material-ui/core/Link";
@@ -32,6 +30,7 @@ const Dashboard = () => {
               }}
             >
               <Link
+                id={"link-back"}
                 component="button"
                 style={{ lineHeight: "30px" }}
                 variant={"body2"}
@@ -40,6 +39,7 @@ const Dashboard = () => {
                 {"<- Go back to search venues"}
               </Link>
             </div>
+            <br />
             <div
               style={{
                 display: "flex",
@@ -58,7 +58,11 @@ const Dashboard = () => {
                     lg={4}
                     md={5}
                   >
-                    <CardVenue key={"card-" + index} venueInfo={venue} />
+                    <CardVenue
+                      key={"card-" + index}
+                      venueInfo={venue}
+                      index={index}
+                    />
                   </Grid>
                 ))}
               </Grid>

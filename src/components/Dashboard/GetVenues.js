@@ -146,6 +146,7 @@ const GetVenues = ({ setVenues }) => {
           variant="outlined"
         />
         <Button
+          data-testid="btn-submit"
           id="btn-submit"
           disabled={submitDisable}
           variant="contained"

@@ -93,6 +93,7 @@ const CardVenue = ({ venueInfo, index }) => {
 
   return (
     <Card
+      data-testid={"card-" + index}
       id={"card-" + index}
       className={clsx(classes.root, classes.spaceBetween)}
       raised={true}
@@ -176,10 +177,13 @@ CardVenue.propTypes = {
   venueInfo: PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,
-    categories: PropTypes.array,
-    location: PropTypes.object,
+    categories: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string })),
+    location: PropTypes.shape({
+      city: PropTypes.string,
+      address: PropTypes.string,
+    }),
   }).isRequired,
-  index: PropTypes.oneOf([PropTypes.number, PropTypes.string]),
+  index: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 export default CardVenue;

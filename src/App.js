@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
 
-import { SnackbarProvider } from "notistack";
 import AppRoute from "./routes/AppRoute";
 import theme from "./theme";
 import GlobalStyles from "./components/GlobalStyles";
@@ -11,14 +10,12 @@ export default function App() {
   return (
     <div className="App">
       <MuiThemeProvider theme={theme}>
-        <SnackbarProvider maxSnack={3}>
-          <GlobalStyles />
-          <BrowserRouter>
-            <Switch>
-              <AppRoute />
-            </Switch>
-          </BrowserRouter>
-        </SnackbarProvider>
+        <GlobalStyles />
+        <BrowserRouter>
+          <Switch>
+            <AppRoute />
+          </Switch>
+        </BrowserRouter>
       </MuiThemeProvider>
     </div>
   );
